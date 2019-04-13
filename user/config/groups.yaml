@@ -1,0 +1,6 @@
+'Game Master':
+  groupname: 'Game Master'
+  access:
+    site: {  }
+    admin: {  }
+    admin-addon-user-manager: {  }
