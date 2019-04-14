@@ -1,0 +1,27 @@
+{
+  "name": "orodirs-notebook",
+  "version": "1.0.0",
+  "description": "A website for dnd with a wiki and a connection to spotify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarah-Lettmann/orodirs-notebook.git"
+  },
+  "keywords": [
+    "dnd"
+  ],
+  "author": "Sarah Lettmann, Felix Klose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sarah-Lettmann/orodirs-notebook/issues"
+  },
+  "homepage": "https://github.com/Sarah-Lettmann/orodirs-notebook#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
