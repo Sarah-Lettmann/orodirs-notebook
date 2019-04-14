@@ -1,20 +1,15 @@
 CREATE DATABASE orodirsNotebook;
 
-USE odorirsNotebook;
-
-CREATE TABLE authorizedAccounts (
-	username VARCHAR(64),
-	PRIMARY KEY (username)
-);
+USE orodirsNotebook;
 
 CREATE TABLE users (
 	username VARCHAR(64),
 	fullName VARCHAR(128),
 	emailAddress VARCHAR(128) UNIQUE,
-	profileImageURL VARCHAR(128),
+	profileImageURL VARCHAR(512),
 	locked INTEGER(1) NOT NULL DEFAULT 0,
 	pwdReset INTEGER(1) NOT NULL DEFAULT 0,
-	password NVARCHAR(64) NOT NULL,
+	password VARCHAR(128) NOT NULL,
 	PRIMARY KEY (username)
 );
 
@@ -47,4 +42,12 @@ CREATE TABLE assignmentCampaigns (
 	CONSTRAINT assignmentCampaignsPK PRIMARY KEY (assignment, campaign)
 );
 
-GRANT ALL PRIVILEGES ON orodirsNotebook.* TO 'orodir'@'localhost' IDENTIFIED BY 'krakataua';
+GRANT ALL PRIVILEGES ON orodirsNotebook.* TO 'orodir'@'localhost' IDENTIFIED
+	BY 'krakataua';
+
+INSERT INTO users(username, fullName, password) VALUES ('admin',
+	'The Administrator', SHA2('admin', 512));
+
+INSERT INTO roles (rolename) VALUES ('admin');
+
+INSERT INTO roleAssignments (username, rolename) VALUES ('admin', 'admin');
