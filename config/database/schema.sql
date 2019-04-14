@@ -13,6 +13,8 @@ CREATE TABLE users (
 	emailAddress VARCHAR(128) UNIQUE,
 	profileImageURL VARCHAR(128),
 	locked INTEGER(1) NOT NULL DEFAULT 0,
+	pwdReset INTEGER(1) NOT NULL DEFAULT 0,
+	password NVARCHAR(64) NOT NULL,
 	PRIMARY KEY (username)
 );
 
