@@ -1,9 +1,10 @@
 <?php
-namespace OrodirsNotebook\API\Database\DatabaseConnectionHolder;
+include_once $_SERVER['DOCUMENT_ROOT'].'/library/autoloader.php';
+
+use OrodirsNotebook\API\Database\DatabaseConnectionHolder;
 
 session_start();
 
-include_once './api/Database/DatabaseConnectionHolder.php';
 $pdo = DatabaseConnectionHolder::getConnection();
 
 if(isset($_GET['login'])) {
