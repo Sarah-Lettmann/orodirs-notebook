@@ -1,0 +1,1 @@
+{"virtualbox":{"/orodirs-notebook.net":{"guestpath":"/orodirs-notebook.net","hostpath":"C:/xampp/htdocs/orodirs-notebook/site","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/xampp/htdocs/orodirs-notebook/vagrant","disabled":false,"__vagrantfile":true}}}
