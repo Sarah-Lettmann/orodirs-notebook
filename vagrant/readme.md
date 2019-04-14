@@ -6,7 +6,7 @@ After he is finished, you can do a _vagrant ssh_ to check if the machine is runn
 # Use vagrant
 The vagrant is available under http://localhost:8080/.
 
-By _ssh_ into the vagrant you can find the files of your project under /var/www/
+By _ssh_ into the vagrant you can find the files of your project under /var/www/site
 
 # Changes
 If you change something regarding the configuration of the vagrant, then do a _vagrant reload --provision_ to force the vagrant to run with the newest configuration.
