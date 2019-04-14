@@ -1,2 +1,163 @@
+/* im-fell-english-sc-regular - latin */
+@font-face {
+  font-family: 'IM Fell English SC';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/im-fell-english-sc-v8-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("IM FELL English SC"), local("IM_FELL_English_SC"), url("../fonts/im-fell-english-sc-v8-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/im-fell-english-sc-v8-latin-regular.woff2") format("woff2"), url("../fonts/im-fell-english-sc-v8-latin-regular.woff") format("woff"), url("../fonts/im-fell-english-sc-v8-latin-regular.ttf") format("truetype"), url("../fonts/im-fell-english-sc-v8-latin-regular.svg#IMFellEnglishSC") format("svg");
+  /* Legacy iOS */ }
+
+/* josefin-slab-regular - latin */
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/josefin-slab-v9-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Josefin Slab Regular"), local("JosefinSlab-Regular"), url("../fonts/josefin-slab-v9-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/josefin-slab-v9-latin-regular.woff2") format("woff2"), url("../fonts/josefin-slab-v9-latin-regular.woff") format("woff"), url("../fonts/josefin-slab-v9-latin-regular.ttf") format("truetype"), url("../fonts/josefin-slab-v9-latin-regular.svg#JosefinSlab") format("svg");
+  /* Legacy iOS */ }
+
+/* josefin-slab-italic - latin */
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/josefin-slab-v9-latin-italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Josefin Slab Italic"), local("JosefinSlab-Italic"), url("../fonts/josefin-slab-v9-latin-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/josefin-slab-v9-latin-italic.woff2") format("woff2"), url("../fonts/josefin-slab-v9-latin-italic.woff") format("woff"), url("../fonts/josefin-slab-v9-latin-italic.ttf") format("truetype"), url("../fonts/josefin-slab-v9-latin-italic.svg#JosefinSlab") format("svg");
+  /* Legacy iOS */ }
+
+/* josefin-slab-700 - latin */
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/josefin-slab-v9-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Josefin Slab Bold"), local("JosefinSlab-Bold"), url("../fonts/josefin-slab-v9-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/josefin-slab-v9-latin-700.woff2") format("woff2"), url("../fonts/josefin-slab-v9-latin-700.woff") format("woff"), url("../fonts/josefin-slab-v9-latin-700.ttf") format("truetype"), url("../fonts/josefin-slab-v9-latin-700.svg#JosefinSlab") format("svg");
+  /* Legacy iOS */ }
+
+/* josefin-slab-700italic - latin */
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/josefin-slab-v9-latin-700italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Josefin Slab Bold Italic"), local("JosefinSlab-BoldItalic"), url("../fonts/josefin-slab-v9-latin-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/josefin-slab-v9-latin-700italic.woff2") format("woff2"), url("../fonts/josefin-slab-v9-latin-700italic.woff") format("woff"), url("../fonts/josefin-slab-v9-latin-700italic.ttf") format("truetype"), url("../fonts/josefin-slab-v9-latin-700italic.svg#JosefinSlab") format("svg");
+  /* Legacy iOS */ }
+
+/********************
+Breakpoints
+********************/
+/********************
+Fonts
+********************/
+/********************
+Apply attention in one go
+********************/
+/********************
+Transitions
+********************/
+/********************
+Box-Shadow
+********************/
+/********************
+Keyframe Animation
+********************/
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 100%; }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  background-color: #111;
+  font-family: 'Josefin Slab', Georgia, serif; }
+
+article,
+aside,
+address,
+header,
+nav,
+main,
+section,
+footer,
+div,
+p,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block; }
+
+a,
+span,
+em,
+i,
+b,
+strong,
+sup,
+sub,
+mark,
+q,
+cite {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit; }
+  a > *,
+  span > *,
+  em > *,
+  i > *,
+  b > *,
+  strong > *,
+  sup > *,
+  sub > *,
+  mark > *,
+  q > *,
+  cite > * {
+    color: inherit; }
+
+div,
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #f5d76e; }
+  @media (max-width: 540px) {
+    div,
+    p {
+      font-size: 1rem; } }
+
+p,
+ul,
+ol,
+dl,
+table,
+img,
+figure {
+  margin-bottom: 1.5rem; }
+
+/* marking text */
+/* outline */
+/* scrollbar */
 h1 {
-  color: #aaa; }
+  font-family: 'IM Fell English SC', serif;
+  color: #f5d76e; }
+
+p {
+  font-family: 'Josefin Slab', Georgia, serif;
+  color: #f5d76e; }
