@@ -1,13 +1,16 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=orodirsNotebook', 'orodir',
-'krakataua');
+namespace OrodirsNotebook\API\Database\DatabaseConnectionHolder;
+
 session_start();
+
+include_once './api/Database/DatabaseConnectionHolder.php';
+$pdo = DatabaseConnectionHolder::getConnection();
 
 if(isset($_GET['login'])) {
 
   $username = $_POST['username'];
   $password = $_POST['password'];
-  
+
   $statement = $pdo->prepare("SELECT username, locked, pwdReset FROM users
     WHERE username = :username
     AND password=SHA2( :password, 512)");
