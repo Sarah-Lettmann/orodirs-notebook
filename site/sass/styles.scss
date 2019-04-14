@@ -1,1 +1,14 @@
+@import "1-settings/settings.font.scss";
+@import "1-settings/settings.color.scss";
+@import "1-settings/settings.breakpoints.scss";
+@import "1-settings/settings.global.scss";
+
+@import "2-tools/tools.mixins.scss";
+@import "2-tools/tools.functions.scss";
+
+@import "3-generic/generic.reset.scss";
+@import "3-generic/generic.box-sizing.scss";
+@import "3-generic/generic.shared.scss";
+@import "3-generic/generic.pseudo-classes.scss";
+
 @import "4-elements/elements.headings.scss";

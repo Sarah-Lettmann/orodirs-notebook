@@ -1,0 +1,66 @@
+body {
+  background-color: $color-background;
+  @include mainFont;
+}
+
+article,
+aside,
+address,
+header,
+nav,
+main,
+section,
+footer,
+div,
+p,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, {
+  display: block;
+}
+
+
+a,
+span,
+em,
+i,
+b,
+strong,
+sup,
+sub,
+mark,
+q,
+cite {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+
+  > * {
+    color: inherit;
+  }
+}
+
+div,
+p {
+  font-size: $font-size-text;
+  font-weight: 300;
+  line-height: $line-height-base;
+  color: $color-text;
+  @include breakpoint(small) {
+    font-size: $font-size-base;
+  }
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+img,
+figure {
+  margin-bottom: $margin-base;
+}
