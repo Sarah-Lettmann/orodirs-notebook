@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1555170649,
-    'checksum' => 'ff9ae8f4e2325e22e0a4591a8b2fdbbc',
+    'timestamp' => 1555175159,
+    'checksum' => 'b88518058212cce675a380f8056336dd',
     'files' => [
         'user/config' => [
             'backups' => [
@@ -11,11 +11,15 @@ return [
             ],
             'groups' => [
                 'file' => 'user/config/groups.yaml',
-                'modified' => 1555170649
+                'modified' => 1555174263
             ],
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1555169952
+            ],
+            'plugins/admin-addon-user-manager' => [
+                'file' => 'user/config/plugins/admin-addon-user-manager.yaml',
+                'modified' => 1555175159
             ],
             'scheduler' => [
                 'file' => 'user/config/scheduler.yaml',
@@ -169,7 +173,11 @@ return [
                 'enabled' => true,
                 'default_list_style' => 'list',
                 'pagination' => [
-                    'per_page' => 20
+                    'per_page' => '20'
+                ],
+                'custom_permissions' => [
+                    0 => 'Campaign 1',
+                    1 => 'Campaign 2'
                 ]
             ],
             'email' => [
@@ -900,14 +908,36 @@ node_modules'
             ]
         ],
         'groups' => [
-            'Game Master' => [
-                'groupname' => 'Game Master',
+            'Game Masters' => [
+                'groupname' => 'Game Masters',
+                'description' => 'Alle Spielleiter',
                 'access' => [
                     'site' => [
-                        
+                        'login' => 'true'
                     ],
                     'admin' => [
+                        'login' => 'true',
+                        'cache' => 'true',
+                        'pages' => 'true',
+                        'statistics' => 'true'
+                    ],
+                    'admin-addon-user-manager' => [
                         
+                    ]
+                ]
+            ],
+            'Spieler' => [
+                'groupname' => 'Spieler',
+                'description' => 'Alle Spieler',
+                'access' => [
+                    'site' => [
+                        'login' => 'true'
+                    ],
+                    'admin' => [
+                        'login' => 'true',
+                        'cache' => 'true',
+                        'pages' => 'true',
+                        'statistics' => 'true'
                     ],
                     'admin-addon-user-manager' => [
                         

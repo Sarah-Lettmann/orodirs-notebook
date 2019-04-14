@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp/htdocs/orodirs-notebook/user/accounts/felix.yaml',
-    'modified' => 1555170708,
+    'modified' => 1555174415,
     'data' => [
         'state' => 'enabled',
         '_json' => [
@@ -11,7 +11,7 @@ return [
         ],
         'email' => 'felix@test.com',
         'fullname' => 'Felix Klose',
-        'language' => 'en',
+        'language' => 'de',
         'twofa_enabled' => false,
         'twofa_secret' => 'RHISFNUP2CQEDO5TN7OIUWDGYCVNTF7I',
         'access' => [
@@ -24,6 +24,9 @@ return [
             'admin-addon-user-manager' => [
                 
             ]
+        ],
+        'groups' => [
+            0 => 'Spieler'
         ]
     ]
 ];

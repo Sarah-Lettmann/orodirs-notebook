@@ -1,6 +1,24 @@
-'Game Master':
-  groupname: 'Game Master'
+'Game Masters':
+  groupname: 'Game Masters'
+  description: 'Alle Spielleiter'
   access:
-    site: {  }
-    admin: {  }
+    site:
+      login: 'true'
+    admin:
+      login: 'true'
+      cache: 'true'
+      pages: 'true'
+      statistics: 'true'
+    admin-addon-user-manager: {  }
+Spieler:
+  groupname: Spieler
+  description: 'Alle Spieler'
+  access:
+    site:
+      login: 'true'
+    admin:
+      login: 'true'
+      cache: 'true'
+      pages: 'true'
+      statistics: 'true'
     admin-addon-user-manager: {  }

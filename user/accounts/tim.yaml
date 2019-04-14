@@ -4,10 +4,13 @@ _json:
   state: '"enabled"'
 email: tim@test.com
 fullname: 'Tim Toamir'
-language: en
+language: de
 twofa_enabled: false
 twofa_secret: RHISFNUP2CQEDO5TN7OIUWDGYCVNTF7I
 access:
   site: {  }
   admin: {  }
   admin-addon-user-manager: {  }
+groups:
+  - 'Game Masters'
+  - Spieler

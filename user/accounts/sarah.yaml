@@ -3,14 +3,19 @@ email: sarah@td-lettmann.de
 fullname: 'Sarah Lettmann'
 title: Administrator
 access:
+  site:
+    login: 'true'
   admin:
     super: 'true'
     login: 'true'
-  site:
-    login: 'true'
+  admin-addon-user-manager: {  }
 hashed_password: $2y$10$hocfh7Xw2z5Ukhyg2hIlY.u1f5L6wcj8AshNna6/N08UW6jsyHEPu
-language: en
+language: de
 twofa_enabled: false
 twofa_secret: RHISFNUP2CQEDO5TN7OIUWDGYCVNTF7I
 groups:
-  - 'Game Master'
+  - Spieler
+_json:
+  avatar: 'null'
+  state: '"enabled"'
+  hashed_password: '"$2y$10$hocfh7Xw2z5Ukhyg2hIlY.u1f5L6wcj8AshNna6\/N08UW6jsyHEPu"'

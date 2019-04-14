@@ -1,0 +1,7 @@
+enabled: true
+default_list_style: list
+pagination:
+  per_page: '20'
+custom_permissions:
+  - 'Campaign 1'
+  - 'Campaign 2'
