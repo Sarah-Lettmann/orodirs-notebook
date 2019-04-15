@@ -1,5 +1,5 @@
 <?php
-  namespace OrodirsNotebook\API;
+  namespace OrodirsNotebook\API\V1;
 
   class Dispatcher {
     static function dispatchRequest($url, $method,
@@ -20,7 +20,7 @@
 
       $method = Dispatcher::resolveAction($method);
 
-      $className = '\\OrodirsNotebook\\API\\Controller\\'.ucfirst($baseType)."Controller";
+      $className = '\\OrodirsNotebook\\API\\V1\\Controller\\'.ucfirst($baseType)."Controller";
       $methodName = $method;
 
       foreach ($types as $typeName) {
@@ -28,10 +28,10 @@
       }
 
       if (!class_exists($className)) {
-        throw new OrodirsNotebook\API\Exception\ClassNotFoundException();
+        throw new OrodirsNotebook\core\Exception\ClassNotFoundException();
       }
       if (!method_exists($className, $methodName)) {
-        throw new OrodirsNotebook\API\Exception\MethodNotFoundException();
+        throw new OrodirsNotebook\core\Exception\MethodNotFoundException();
       }
 
       $controller = new $className();

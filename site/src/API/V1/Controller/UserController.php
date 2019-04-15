@@ -1,7 +1,7 @@
 <?php
-namespace OrodirsNotebook\API\Controller;
+namespace OrodirsNotebook\API\V1\Controller;
 
-use OrodirsNotebook\API\DAO;
+use OrodirsNotebook\core\Database\DAO;
 
 class UserController {
   public function read($params, $getParams, $postParams, $currentUser) {

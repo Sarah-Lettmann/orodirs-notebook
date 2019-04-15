@@ -1,5 +1,5 @@
 <?php
-namespace OrodirsNotebook\API\Exception;
+namespace OrodirsNotebook\core\Exception;
 
 class MethodNotFoundException extends Exception {
 

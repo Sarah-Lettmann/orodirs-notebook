@@ -1,7 +1,7 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/library/autoloader.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/src/core/autoloader.php';
 
-use OrodirsNotebook\API\Database\DatabaseConnectionHolder;
+use OrodirsNotebook\core\Database\DatabaseConnectionHolder;
 
 session_start();
 
