@@ -1,7 +1,8 @@
 <?php
 namespace OrodirsNotebook\Core\Config;
 
-class AbstractConfigLoader {
-  public abstract function load();
+abstract class AbstractConfigLoader {
+  public static abstract function load();
+  protected static abstract function validate($config);
 }
  ?>

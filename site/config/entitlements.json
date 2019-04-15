@@ -1,0 +1,43 @@
+{
+  "entitlements": {
+    "self": {
+      "objects": {
+        "users": {
+          "access": {
+            "read": [
+              "username",
+              "fullName",
+              "emailAddress",
+              "profileImageURL",
+              "locked",
+              "pwdReset"
+            ],
+            "write": [
+              "fullName",
+              "emailAddress",
+              "profileImageURL",
+              "password",
+              "pwdReset"
+            ]
+          }
+        }
+      },
+      "scope": "self"
+    },
+    "readUser": {
+      "objects": {
+        "users": {
+          "access": {
+            "read": [
+              "username",
+              "fullName",
+              "profileImageURL",
+              "locked"
+            ]
+          }
+        }
+      },
+      "scope": "all"
+    }
+  }
+}
