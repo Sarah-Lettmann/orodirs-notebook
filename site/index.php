@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/src/Core/autoloader.php';
 session_start();
 ?>
 <!DOCTYPE html>

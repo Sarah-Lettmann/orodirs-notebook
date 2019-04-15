@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/src/core/autoloader.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/src/Core/autoloader.php';
 
 use OrodirsNotebook\core\Database\DatabaseConnectionHolder;
 

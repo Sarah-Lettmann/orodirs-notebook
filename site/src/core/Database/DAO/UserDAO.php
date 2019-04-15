@@ -1,7 +1,7 @@
 <?php
-  namespace OrodirsNotebook\core\Database\DAO;
+  namespace OrodirsNotebook\Core\Database\DAO;
 
-  use OrodirsNotebook\core\Database;
+  use OrodirsNotebook\Core\Database;
 
   class UserDAO {
     public function readAllUsers() {
@@ -13,7 +13,7 @@
 
       $userObjects = array();
       while($row = $statement->fetch()) {
-        $obj = new \OrodirsNotebook\core\Datamodel\User();
+        $obj = new \OrodirsNotebook\Core\Datamodel\User();
         $obj->username = $row['username'];
         $obj->fullName = $row['fullName'];
         $obj->profileImageURL = $row['profileImageURL'];

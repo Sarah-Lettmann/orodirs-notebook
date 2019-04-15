@@ -1,5 +1,5 @@
 <?php
-  namespace OrodirsNotebook\core\Datamodel;
+  namespace OrodirsNotebook\Core\Datamodel;
 
   class User
   {

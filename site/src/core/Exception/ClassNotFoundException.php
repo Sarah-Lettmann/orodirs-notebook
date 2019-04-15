@@ -1,5 +1,5 @@
 <?php
-namespace OrodirsNotebook\core\Exception;
+namespace OrodirsNotebook\Core\Exception;
 
 class ClassNotFoundException extends Exception {
 

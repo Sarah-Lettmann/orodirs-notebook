@@ -1,5 +1,5 @@
 <?php
-namespace OrodirsNotebook\core\Database;
+namespace OrodirsNotebook\Core\Database;
 
 use \PDO;
 
