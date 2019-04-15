@@ -1,7 +1,7 @@
 <?php
 namespace OrodirsNotebook\Core\Config;
 
-class PermissionConfigLoader extends AbstractConfigLoader {
+class EntitlementConfigLoader extends AbstractConfigLoader {
   public function load() {
 
   }
