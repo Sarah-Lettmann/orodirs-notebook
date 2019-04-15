@@ -1,0 +1,9 @@
+.main {
+
+  &--book {
+    width: 100%;
+    height: 100vh;
+    padding: 2*$padding-base;
+    overflow: hidden;
+  }
+}
