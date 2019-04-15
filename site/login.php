@@ -1,31 +1,17 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/src/Core/autoloader.php';
 
-use OrodirsNotebook\core\Database\DatabaseConnectionHolder;
+use OrodirsNotebook\Core\Authorization\LoginHelper;
 
 session_start();
-
-$pdo = DatabaseConnectionHolder::getConnection();
 
 if(isset($_GET['login'])) {
 
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $statement = $pdo->prepare("SELECT username, locked, pwdReset FROM users
-    WHERE username = :username
-    AND password=SHA2( :password, 512)");
-    $result = $statement->execute(array('username' => $username,
-    'password' => $password));
-    $user = $statement->fetch();
-
-    if ($user !== false) {
-      $_SESSION['username'] = $user['username'];
-      header('Location: index.php');
-    } else {
-      $errorMessage = "E-Mail oder Passwort war ungültig<br>";
-    }
-  }
+  LoginHelper::handleLogin($username, $password);
+}
   ?>
   <!DOCTYPE html>
   <html lang="de_DE">

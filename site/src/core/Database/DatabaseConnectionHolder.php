@@ -2,6 +2,7 @@
 namespace OrodirsNotebook\Core\Database;
 
 use \PDO;
+use OrodirsNotebook\Core\Config;
 
 class DatabaseConnectionHolder {
   private static $host;
@@ -34,12 +35,12 @@ class DatabaseConnectionHolder {
   }
 
   private static function init() {
-    $dbConfig = parse_ini_file($_SERVER['DOCUMENT_ROOT']."/config/database.ini");
-    self::$host = $dbConfig['host'];
-    self::$port = $dbConfig['port'];
-    self::$database = $dbConfig['database'];
-    self::$username = $dbConfig['username'];
-    self::$password = $dbConfig['password'];
+    $dbConfig = Config\DatabaseConfigLoader::load();
+    self::$host = $dbConfig->host;
+    self::$port = $dbConfig->port;
+    self::$database = $dbConfig->database;
+    self::$username = $dbConfig->username;
+    self::$password = $dbConfig->password;
   }
 }
 ?>
