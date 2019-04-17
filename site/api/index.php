@@ -9,13 +9,18 @@ if(!isset($_SESSION['username'])) {
 }
 else {
   $url      = (isset($_GET['_url']) ? $_GET['_url'] : '');
-  $dispatcherName = "OrodirsNotebook\\API\\";
   if(substr($url, 0, 3) == "v1/") {
-    $dispatcherName = $dispatcherName."V1\\Dispatcher";
+    $dispatcherName = "OrodirsNotebook\\API\\V1\\Dispatcher";
     $url = substr($url, 3);
+    $dispatcherName::dispatchRequest($url,
+    $_SERVER['REQUEST_METHOD'], $_GET, $_POST, $_SESSION['username']);
+  } else if(substr($url, 0, 3) == "v2/") {
+    $dispatcherName = "Com\\KlosedSource\\APIFramework\\APICallDispatcher";
+    $url = substr($url, 3);
+    $dispatcher = new $dispatcherName();
+    $dispatcher->init($_SERVER['DOCUMENT_ROOT']."/config/api-config.json");
+    $dispatcher->dispatchCall($url);
   }
-  $dispatcherName::dispatchRequest($url,
-  $_SERVER['REQUEST_METHOD'], $_GET, $_POST, $_SESSION['username']);
 }
 
 ?>
