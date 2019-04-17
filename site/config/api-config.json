@@ -20,7 +20,8 @@
           "permissions": [
             {
                 "adminPermissions": ["everyone"],
-                "targetType": "all"
+                "targetType": "query",
+                "targetQuery": "select username from users where locked=0"
             }
           ]
         }
@@ -29,11 +30,12 @@
         "methods": {
           "GET": {
             "controllerClass": "OrodirsNotebook\\API\\V1\\Controller\\UserController",
-            "controllerMethod": "readUser",
+            "controllerMethod": "readAllUsers",
             "permissions": [
               {
                   "adminPermissions": ["everyone"],
-                  "targetType": "self"
+                  "targetType": "query",
+                  "targetQuery": "select username from users where locked=0"
               }
             ]
           }

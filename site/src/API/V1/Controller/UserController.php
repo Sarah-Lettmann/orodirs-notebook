@@ -4,7 +4,7 @@ namespace OrodirsNotebook\API\V1\Controller;
 use OrodirsNotebook\Core\Database\DAO;
 
 class UserController {
-  public function readAllUsers($queryParameter, $permissionResolver) {
+  public function readAllUsers($queryParameter, $endpoint, $permissionResolver) {
     $dao = new DAO\UserDAO();
     $result = $dao->readAllUsers();
 
@@ -12,7 +12,7 @@ class UserController {
     header('Content-Type: application/json');
     echo json_encode($result);
   }
-  
+
   public function read($params, $getParams, $postParams, $currentUser) {
     $dao = new DAO\UserDAO();
     $result = $dao->readAllUsers();

@@ -46,8 +46,8 @@ class APICallDispatcher {
           $error = new APIError("The requested endpoint ".$part." (".$url.") does not exist");
           $this->error(400, $error);
         }
-        $this->processCall($endpoint["methods"], $params, $isParam);
       }
+      $this->processCall($endpoint["methods"], $params, $isParam);
     } catch(Exception $e) {
       // this can't occur,
       $error = new APIError($e->getMessage());
@@ -75,7 +75,7 @@ class APICallDispatcher {
       $className = $endpoint["controllerClass"];
       $methodName = $endpoint["controllerMethod"];
       $controller = new $className();
-      $controller->$methodName($queryParameter, $this->permissionResolver);
+      $controller->$methodName($queryParameter, $endpoint, $this->permissionResolver);
     } else {
       $error = new APIError("Permission denied.");
       $this->error(403, $error);

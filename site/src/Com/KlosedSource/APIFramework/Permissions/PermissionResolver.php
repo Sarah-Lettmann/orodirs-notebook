@@ -67,7 +67,7 @@ class PermissionResolver {
 
   public function checkPermission($endpoint, $queryParameter) {
     // Get the current user's userId
-    $adminIdParam = $config["adminIdParam"];
+    $adminIdParam = $this->config["adminIdParam"];
     $userId = isset($_SESSION[$adminIdParam]) &&
     is_string($_SESSION[$adminIdParam]) ?
     $_SESSION[$adminIdParam] : '';
@@ -88,6 +88,7 @@ class PermissionResolver {
         // If that's the case and parameters are given, check if the last
         // parameter in the array (which is assumed to be the current parameter)
         if($tmpIsValidAdmin && !empty($queryParameter)) {
+          $tmpIsValidAdmin = False;
           $validTargets = $this->getValidTargets($permission, $queryParameter,
           $userId);
           // If an "ALL" is found, the result is True
@@ -158,14 +159,13 @@ class PermissionResolver {
     // Prepare and execute the query
     $validTargets = array();
     $query = $permission["targetQuery"];
-    $statement = $connection->prepare();
+    $statement = $this->connection->prepare($query);
     $statementResult = $statement->execute(array('user' => $userId));
 
     // Iterate through the result
     while ($row = $statement->fetch()) {
       array_push($validTargets, $row[0]);
     }
-
     return $validTargets;
   }
 
