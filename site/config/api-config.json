@@ -15,8 +15,7 @@
     "users": {
       "methods": {
         "GET": {
-          "controllerClass": "OrodirsNotebook\\API\\V1\\Controller\\UserController",
-          "controllerMethod": "readAllUsers",
+          "controllerClass": "OrodirsNotebook\\API\\V2\\Controller\\AllUsersController",
           "permissions": [
             {
                 "adminPermissions": ["everyone"],
@@ -29,8 +28,7 @@
       "_id": {
         "methods": {
           "GET": {
-            "controllerClass": "OrodirsNotebook\\API\\V1\\Controller\\UserController",
-            "controllerMethod": "readAllUsers",
+            "controllerClass": "OrodirsNotebook\\API\\V2\\Controller\\SingleUserController",
             "permissions": [
               {
                   "adminPermissions": ["everyone"],

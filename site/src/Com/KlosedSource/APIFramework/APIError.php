@@ -10,7 +10,6 @@ class APIError {
 
   public $errorCode;
   public $message;
-
 }
 
 ?>

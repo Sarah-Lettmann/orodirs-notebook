@@ -35,19 +35,17 @@ class APICallDispatcher {
       $endpoint = $this->config["endpoints"];
       $params = array();
       foreach($urlParts as $part) {
-        $isParam = False;
         if(array_key_exists($part, $endpoint)) {
           $endpoint = $endpoint[$part];
         } else if (array_key_exists("_id", $endpoint)) {
           $endpoint = $endpoint["_id"];
-          $isParam = True;
           array_push($params, $part);
         } else {
           $error = new APIError("The requested endpoint ".$part." (".$url.") does not exist");
           $this->error(400, $error);
         }
       }
-      $this->processCall($endpoint["methods"], $params, $isParam);
+      $this->processCall($endpoint["methods"], $params);
     } catch(Exception $e) {
       // this can't occur,
       $error = new APIError($e->getMessage());
@@ -65,21 +63,20 @@ class APICallDispatcher {
     return !empty($userId);
   }
 
-  private function processCall($endpoint, $params, $hasParam) {
+  private function processCall($endpoint, $params) {
     $endpoint = $this->checkRequestMethod($endpoint);
-    $queryParameter = '';
-    if($hasParam) {
-      $queryParameter = end($params);
-    }
-    if($this->permissionResolver->checkPermission($endpoint, $queryParameter)) {
-      $className = $endpoint["controllerClass"];
-      $methodName = $endpoint["controllerMethod"];
-      $controller = new $className();
-      $controller->$methodName($queryParameter, $endpoint, $this->permissionResolver);
+    $className = $endpoint["controllerClass"];
+    $controller = new $className();
+    if(is_a($controller, "Com\KlosedSource\APIFramework\Controller\AbstractController")) {
+      $controller->init($this->config);
+      $result = $controller->processCall($endpoint, $params, array(), array());
     } else {
-      $error = new APIError("Permission denied.");
-      $this->error(403, $error);
+      $error = new APIError("Controller does not inherit from AbstractController");
+      $this->error(500, $error);
     }
+    http_response_code($result->statusCode);
+    header('Content-Type: application/json');
+    echo $result->resultText;
   }
 
   private function checkRequestMethod($endpoint) {
@@ -98,6 +95,7 @@ class APICallDispatcher {
 
   public function error($httpStatus, $errorMessage) {
     http_response_code($httpStatus);
+    header('Content-Type: application/json');
     echo json_encode($errorMessage);
     exit;
   }

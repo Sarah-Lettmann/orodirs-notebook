@@ -160,6 +160,13 @@ class PermissionResolver {
     $validTargets = array();
     $query = $permission["targetQuery"];
     $statement = $this->connection->prepare($query);
+    $statementParams = array('userId' => $userId);
+    $i = 1;
+    foreach($queryParameter as $singleParam) {
+      $paramName = "param".$i;
+      $statementParams[$paramName] = $singleParam;
+      $i++;
+    }
     $statementResult = $statement->execute(array('user' => $userId));
 
     // Iterate through the result
