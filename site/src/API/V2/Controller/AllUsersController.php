@@ -1,17 +1,18 @@
 <?php
-namespace OrodirsNotebook\API\V1\Controller;
+namespace OrodirsNotebook\API\V2\Controller;
 
 use OrodirsNotebook\Core\Database\DAO;
+use Com\KlosedSource\APIFramework\Controller\AbstractController;
+use Com\KlosedSource\APIFramework\RestResult;
 
-class AllUsersController {
-  protected function init() {
-  }
+class AllUsersController extends AbstractController {
+
 
   protected function process() {
     $dao = new DAO\UserDAO();
     $result = $dao->readAllUsers();
 
-    $validTargets = $this-permissionResolver->checkPermission($curEndpoint,
+    $validTargets = $this->permissionResolver->getAllValidTargets($this->endpoint,
       $this->parameters);
 
     if(is_string($validTargets) && $validTargets == "ALL") {

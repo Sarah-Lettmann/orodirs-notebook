@@ -23,7 +23,7 @@ class PermissionResolver {
 
   public function getAllValidTargets($endpoint, $queryParameter) {
     // Get the current user's userId
-    $adminIdParam = $config["adminIdParam"];
+    $adminIdParam = $this->config["adminIdParam"];
     $userId = isset($_SESSION[$adminIdParam]) &&
     is_string($_SESSION[$adminIdParam]) ?
     $_SESSION[$adminIdParam] : '';

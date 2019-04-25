@@ -26,7 +26,7 @@ abstract class AbstractController {
     $this->permissionResolver->init($this->config);
     $this->databaseConnection = DatabaseConnector::getConnection($config);
     $this->links = array();
-    $this->init();
+    //$this->init();
   }
 
   public function processCall($endpoint, $parameters, $_get, $_post) {
@@ -41,13 +41,13 @@ abstract class AbstractController {
     } else {
       $data = new RestResult();
       $data->statusCode = 403;
-      $data->resultText = "Permission denied";
+      $data->resultText = json_encode("Permission denied");
     }
     return $data;
   }
 
   private function checkPermissions() {
-    $this->permissionResolver->checkPermission($this->endpoint,
+    return $this->permissionResolver->checkPermission($this->endpoint,
     $this->parameters);
   }
 
@@ -71,7 +71,7 @@ abstract class AbstractController {
         if($link->$isIdEndpoint) {
 
         } else {
-          if($this-permissionResolver->checkPermission($curEndpoint,
+          if($this->permissionResolver->checkPermission($curEndpoint,
           $this->parameters)) {
               $attr = $link->attribute;
           }
@@ -81,7 +81,6 @@ abstract class AbstractController {
   }
 
   protected abstract function process();
-  protected abstract function init();
 
 }
 
