@@ -13,17 +13,8 @@ session_start();
   <title>Orodir's Notebook</title>
 </head>
 <body>
-  <?php
-    $perm = EntitlementConfigLoader::load()->entitlements->self;
-    $query = QueryBuilder::buildObjectQueryForPermission($perm, "users",
-      "fullName LIKE '%mini%'", array(), "admin");
-    var_dump($query);
-   ?>
-   <br />
-   <br />
    <?php
     $test = UserPermissionResolver::resolveUserPermissions("admin");
-    var_dump($test);
     $query = QueryBuilder::buildObjectQueryForPermission($test[0], "users",
       "fullName LIKE '%mini%'", array(), "admin");
     var_dump($query);

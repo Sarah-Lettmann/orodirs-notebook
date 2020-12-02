@@ -1,0 +1,44 @@
+{
+  "dataSource" : {
+    "host": "localhost",
+    "port": "3306",
+    "database": "orodirsNotebook",
+    "username": "orodir",
+    "password": "krakataua"
+  },
+  "permissionSource": {
+    "class": "OrodirsNotebook\\Core\\Authorization\\PermissionSource",
+    "method": "getUserPermissions"
+  },
+  "adminIdParam": "username",
+  "endpoints": {
+    "users": {
+      "methods": {
+        "GET": {
+          "controllerClass": "OrodirsNotebook\\API\\V2\\Controller\\AllUsersController",
+          "permissions": [
+            {
+                "adminPermissions": ["everyone"],
+                "targetType": "query",
+                "targetQuery": "select username from users where locked=0"
+            }
+          ]
+        }
+      },
+      "_id": {
+        "methods": {
+          "GET": {
+            "controllerClass": "OrodirsNotebook\\API\\V2\\Controller\\SingleUserController",
+            "permissions": [
+              {
+                  "adminPermissions": ["everyone"],
+                  "targetType": "query",
+                  "targetQuery": "select username from users where locked=0"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
